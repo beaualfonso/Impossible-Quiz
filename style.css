@@ -1,0 +1,113 @@
+body{
+    background-image: url('media/bacgkround.png');
+    background-size: cover;
+    margin: 0 auto;
+}
+
+#container{
+    background-color: #59B5F7;
+    display: block;
+    border-radius: 20px;
+    border: none;
+    max-width: 75%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 50px;
+    font-family: "Quiz Font";
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+h1{
+    font-size: 40px;
+}
+
+button{
+    font-family: "Quiz Font";
+}
+
+#begin{
+    background-color: #182E6F;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+@font-face {
+    font-family: "Quiz Font";
+    src: url("fonts/HowToDoSomething-7pKl.ttf");
+}
+
+#question-container{
+    background-color: #59B5F7;
+    display: block;
+    border-radius: 20px;
+    border: none;
+    max-width: 75%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 50px;
+    font-family: "Quiz Font";
+}
+
+#answerBtns{
+    position: relative;
+    margin-bottom: 25px;
+}
+
+#a{
+    background-color: lightcoral;
+    border: none;
+    border-radius: 20px;
+    font-size: 30px;
+    width: 135px;
+    padding: 15px 10px;
+    word-wrap: break-word;
+
+}
+#b{
+    background-color: lightblue;
+    border: none;
+    border-radius: 20px;
+    font-size: 30px;
+    width: 130px;
+    padding: 15px 10px;
+    word-wrap: break-word;
+}
+#c{
+    background-color: lightgreen;
+    border: none;
+    border-radius: 20px;
+    font-size: 30px;
+    width: 130px;
+    padding: 15px 10px;
+    word-wrap: break-word;
+}
+#d{
+    background-color: yellow;
+    border: none;
+    border-radius: 20px;
+    font-size: 30px;
+    width: 130px;
+    padding: 15px 10px;
+    word-wrap: break-word;
+}
+
+
