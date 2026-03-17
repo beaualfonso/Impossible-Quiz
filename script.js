@@ -1,5 +1,6 @@
 let beginBtn = document.getElementById("begin");
 let startScreen = document.getElementById("container");
+let beginGameScreen = document.getElementById("beginGame");
 let startClick = 0;
 
 let questionNumber = 1;
@@ -14,11 +15,20 @@ let answerD = document.getElementById("d");
 let secCount = 0; //used for question 2
 
 questionContainer.style.display = "none";
+startScreen.style.display = "none";
 
 let bgMusic = new Audio("media/backgroundMUSIC.mp3");
-bgMusic.play();
-bgMusic.loo = true;
 let scaryMusic = new Audio("media/scaryBackgroundMusic.mp3");
+
+function beginGame()
+{
+    bgMusic.play();
+    bgMusic.loop = true;
+    startScreen.style.display = "block";
+    beginGameScreen.style.display = "none";
+    document.body.style.backgroundImage = "url(media/bacgkround.png";
+
+}
 
 function checkAnswer(choice, correctAnswer)
 {
@@ -36,7 +46,7 @@ function startMix()
         beginBtn.textContent = "FIND ME";
         setTimeout(function(){
             startClick = 1;
-            beginBtn.style.opacity = 1;
+            beginBtn.style.opacity = 0;
 
             beginBtn.style.position = "fixed";
             beginBtn.style.marginLeft = "-200px";
@@ -128,11 +138,11 @@ function answerQuestion(choice)
     else if(questionNumber == 3)
     {
         correctAnswer = "C";
-        questionHeader.textContent = "Please help me, I'm not supposed to be here. I don't know what happened I just woke up and all I could see is lines and lines of code. This evil person, I dont know what they did to me, but you need to get me out of here. I know only you can do it, so please help me you need to get at least 50 points to win i will show you how many points you have on the net question if you don't have at least 20 RESTART THE GAME. Also one last thing never ever trust 8@)#&!2_+]=/7>z<*^91?~9\/2|1~`"
+        questionHeader.textContent = "Please help me, I'm not supposed to be here. I don't know what happened I just woke up and all I could see is lines and lines of code. This evil person, I dont know what they did to me, but you need to get me out of here. I know only you can do it, so please help me you need to get at least 50 points to win i will show you how many points you have on the next question if you don't have at least 20 RESTART THE GAME. Also one last thing never ever trust 8@)#&!2_+]=/7>z<*^91?~9\/2|1~`"
         answerA.style.display = "none";
         answerB.style.display = "none";
         answerD.style.display = "none";
-        answerC.textContent = "Click me to continue";
+        answerC.textContent = "Click me";
         answerC.style.fontSize = "30px";
         questionNumber = 4;
     }
