@@ -16,6 +16,8 @@ let answerB = document.getElementById("b");
 let answerC = document.getElementById("c");
 let answerD = document.getElementById("d");
 let secCount = 0; //used for question 2
+let timer; //ending 2 question10
+let hidden = false;
 
 questionContainer.style.display = "none";
 startScreen.style.display = "none";
@@ -47,7 +49,7 @@ function normalBg()
 
 function scaryBg()
 {
-    document.body.style.backgroundImage="url(media/scaryBG.png";
+    document.body.style.backgroundImage="url(media/scaryBG.png)";
     bgMusic.pause();
     scaryMusic.play();
     scaryMusic.loop = true;
@@ -276,7 +278,7 @@ function answerQuestion(choice)
         correctAnswer = "A";
         questionNumber = 12;
     }
-    else if(choice == "C" && questionNumber == 12)
+    else if(choice == "C" && questionNumber == 12 && ending == 1)
     { 
         answerA.style.display = "none";
         questionHeader.textContent = "I knew you could do it, thank you for saving me, I knew I could trust you to save me. Only you could be so stupid to trust me, I told you to never trust me, but you still trusted me anyways, and this is what you get for your foolishness. Gooodbye player. Thank you, and welcome to your life, as the green button in this impossible quiz";
@@ -286,9 +288,9 @@ function answerQuestion(choice)
             questionHeader.textContent = "You lost, green won. Welcome to your life as the green button.";
             questionContainer.style.fontFamily = "Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
             document.body.style.backgroundImage ="url(media/black.webp)";
-        }, 2000);
+        }, 20000);
     }
-    else if(choice == "A" && questionNumber == 12)
+    else if(choice == "A" && questionNumber == 12 && ending == 1)
     {
         endMusic.pause();
         peaceEnd.play();
@@ -314,8 +316,7 @@ function answerQuestion(choice)
         questionHeader.textContent = "Do you think you will be able to escape now?";
         answerA.textContent = "Yes";
         answerB.textContent = "Yes";
-        answerC.textContent = "NONONONONONONONONONONONONONONNNNONONOONNONONONONONONONONONONONONONNONONNNONONONONONONONONNONONONONNONONONONONONONONONONONONONNNONONONONONONONONONNONNONONONONONONONONONONNNONONONONONONOONONONONONONONNONONONONONONNOONONONONONONONONONONONNONON";
-        answerC.style.fontSize = "6px";
+        answerC.textContent = "NO";
         answerD.textContent = "Yes";
         correctAnswer = "C";
         questionNumber = 9;
@@ -331,17 +332,52 @@ function answerQuestion(choice)
         answerA.textContent = "Trust me and click me.";
         questionNumber = 10;
     }
-    else if(questionNumber == 10 && ending == 2)
+    else if(questionNumber == 10 && ending == 2 && choice == "A")
     {
         normalBg();
-        questionHeader.textContent = "Green has lost his mind, he was trying to use you to break out of this game. He needed 50 points to be able to gain access into the system files to modify his code and leave. Luckily you're kinda stupid and didn't get them all right so he wasnt able to use you. No offense but thank you for being stupid you just saved us all alot of trouble. Now we can finish the game without him. Just get rid of his button in the console. Just hide him for now until we can delete him. Open the console and type 'answerC,style,display = 'none'' and his button will go away. You only have a certain amount of time before he comes back, so please hurry.";
+        questionHeader.textContent = "Green has lost his mind, he was trying to use you to break out of this game. He needed 50 points to be able to gain access into the system files to modify his code and leave. Luckily you're kinda stupid and didn't get them all right so he wasnt able to use you. No offense but thank you for being stupid you just saved us all alot of trouble. Now we can finish the game without him. Just get rid of his button in the console. Just hide him for now until we can delete him. Open the console and type 'answerC.style.display = 'none'' and his button will go away. After doing that type 'hidden = true' to let me know so we can continute. You only have a certain amount of time before he comes back, so please hurry. Hide his button and click continue.";
         answerA.textContent = "Continue";
         questionNumber = 11;
-        setTimeout(function(){
+        timer = setTimeout(function(){
             scaryBg();
             questionHeader.textContent = "YOU WILL NOT GET RID OF ME.";
             answerA.style.display = "none";
             answerC.textContent = "You Must Click Me";
-        }, 50000);
+        }, 60000);
+    }
+    else if(questionNumber == 11 && ending == 2 && hidden == true)
+    {
+        clearTimeout(timer);
+        bgMusic.pause();
+        peaceEnd.play();
+        peaceEnd.loop = true;
+        answerC.style.display = "none";
+        questionHeader.textContent = "You escpaed successfully, nice job. Let me skip you to the last question so you can finish this quiz and get out of here for good.";
+        answerA.textContent = "Continue"
+        questionNumber = 12;
+    }
+    else if(questionNumber == 11 && ending == 2)
+    {
+        alert("You have to hide greens button first");
+    }
+    else if(questionNumber == 12 && ending == 2)
+    {
+        questionHeader.textContent = "What does it mean to bg truly alive?";
+        questionContainer.style.backgroundColor = 'white';
+        answerB.style.display = 'inline-block';
+        answerD.style.display = 'inline-block';
+        answerA.textContent = "To keep moving";
+        answerB.textContent = "To be remembered";
+        answerD.textContent = "To exist and live life";
+        questionNumber = 13;
+    }
+    else if(questionNumber == 13 && ending == 2)
+    {
+        answerB.style.display = 'none';
+        answerD.style.display = 'none';
+        document.body.style.backgroundImage = "url(media/trueEnd.png)";
+        questionHeader.textContent = "There is no answer, you define what it means to be alive by your own values. Something green did;t quite understnd. Congratulations on completing this imposible quiz.";
+        answerA.style.backgroundColor = "white";
+        answerA.textContent = "THE END";
     }
 }
