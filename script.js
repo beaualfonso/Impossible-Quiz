@@ -363,7 +363,6 @@ function answerQuestion(choice)
     else if(questionNumber == 12 && ending == 2)
     {
         questionHeader.textContent = "What does it mean to bg truly alive?";
-        questionContainer.style.backgroundColor = 'white';
         answerB.style.display = 'inline-block';
         answerD.style.display = 'inline-block';
         answerA.textContent = "To keep moving";
@@ -373,6 +372,7 @@ function answerQuestion(choice)
     }
     else if(questionNumber == 13 && ending == 2)
     {
+        questionContainer.style.backgroundColor = 'white';
         answerB.style.display = 'none';
         answerD.style.display = 'none';
         document.body.style.backgroundImage = "url(media/trueEnd.png)";
