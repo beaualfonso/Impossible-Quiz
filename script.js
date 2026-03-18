@@ -376,7 +376,7 @@ function answerQuestion(choice)
         answerB.style.display = 'none';
         answerD.style.display = 'none';
         document.body.style.backgroundImage = "url(media/trueEnd.png)";
-        questionHeader.textContent = "There is no answer, you define what it means to be alive by your own values. Something green did;t quite understnd. Congratulations on completing this imposible quiz.";
+        questionHeader.textContent = "There is no answer, you define what it means to be alive by your own values. Something green didn't quite understnd. Congratulations on completing this imposible quiz.";
         answerA.style.backgroundColor = "white";
         answerA.textContent = "THE END";
     }
