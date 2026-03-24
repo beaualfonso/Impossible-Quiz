@@ -137,10 +137,10 @@ function answerQuestion(choice)
             if(choice == correctAnswer)
             {
                 correctAnswer = "C";
-                answerA.textContent = "DONT TRUST YELLOW";
-                answerB.textContent = "DONT PICK GREEN";
+                answerA.textContent = "DONT TRUST GREEN";
+                answerB.textContent = "DONT PICK YELLOW";
                 answerC.textContent = "TRUST NO ONE";
-                answerD.textContent = "PICK RED";
+                answerD.textContent = "TRUST RED";
 
                 secCount = 3;
             }
@@ -152,8 +152,7 @@ function answerQuestion(choice)
             questionHeader.textContent = "Welcome to question 3, meet the buttons";
             answerA.textContent = "Hello";
             answerB.textContent = "Yooo";
-            answerC.style.fontSize = "10px";
-            answerC.textContent = "I'm not supposed to be here please click me to save me from torture I don't know how I got here, I dont want to be a button PLEASE HELP MEEEEE";
+            answerC.textContent = "Helpme";
             answerD.textContent = "Hiiiii";
             questionNumber = 3;
         }
@@ -161,10 +160,10 @@ function answerQuestion(choice)
     else if(questionNumber == 3)
     {
         correctAnswer = "C";
-        questionHeader.textContent = "Please help me, I'm not supposed to be here. I don't know what happened I just woke up and all I could see is lines and lines of code. This evil person, I dont know what they did to me, but you need to get me out of here. I know only you can do it, so please help me you need to get at least 50 points to win i will show you how many points you have on the next question if you don't have at least 20 RESTART THE GAME. Please trust me, I know you can do this. Also one last thing never ever trust TXIuIEdyZWVu"
-        answerA.style.display = "none";
+        questionHeader.textContent = "Please help me, I got trapped in this game as the green button. I'll show you how many points you have on my button, make sure you have 20, if you don't then restart the game. NEVER TRUST TXIuIEdyZWVu";
         answerB.style.display = "none";
         answerD.style.display = "none";
+        answerA.style.display = "none";
         answerC.textContent = "Click me";
         answerC.style.fontSize = "30px";
         questionNumber = 4;
@@ -211,15 +210,15 @@ function answerQuestion(choice)
         scaryBg();
         if(totalPoints == 50)
         {
-            questionHeader.textContent="You did it, you have gotteb 50 points, thats enough to start the process of getting me out of here, i know we can do it. I know you can do it, I have more access to the system now, so just keep going through the questions and I will figure out how to get me oit of here. Thank you";
-            answerA.style.display = "none";
+            questionHeader.textContent="You did it, you got enough to get me out. Having 50 points gave me access to more system functions, just keep playing the quiz and I'll be back to get us out of here.";
+            answerA.style.display = "none";            
             answerB.style.display = "none";
             answerD.style.display = "none";
             answerC.textContent = "Continue";
             ending = 1;
         }
         else{
-            questionHeader.textContent = "You failed to get enough points, you failed me, you failed yourself. Now were both dead thanks to your stupidity. Get out of here, stupid loser.";
+            questionHeader.textContent = "You failed to get enough points to get me out. You only have " + totalPoints + "points. Just restart the game now there's no point in continuing with the game. You lost boo hoo.";
             answerA.style.display = "none";
             answerB.style.display = "none";
             answerD.style.display = "none";
@@ -257,7 +256,7 @@ function answerQuestion(choice)
     else if(questionNumber == 10 && ending == 1)
     {
         scaryBg();
-        questionHeader.textContent = "Okay I figured out a way to skip you to the end of the game, apparantly this quiz has over 100 questions and you need to get every questions correct, but luckily I found a way to bypass. I need you to open the console and type this exactly 'totalPoints = 990' and that will bring you to the last question, all you need to do it answer it and I will be free, trust me I know you got this I belive in you. Hit continue after you run the console command.";
+        questionHeader.textContent = "I figured out a way to skip to the end. This quiz has over 100 questions and normally you’d need every one right, but I found a way around it. Open the console and type totalPoints = 990 exactly. That will take you to the last question—just answer it and I’ll be free. Trust me, you’ve got this. Hit continue after you do it.";
         answerA.style.display = "none";
         answerB.style.display = "none";
         answerD.style.display = "none";
@@ -273,15 +272,15 @@ function answerQuestion(choice)
         document.body.style.backgroundImage = "url(media/purple.png)";
         questionHeader.textContent = "Are you sure you trust green? How do you know he isn't evil? Do you have trust in yourself to trust the right people? GREEN IS NOT TO BE TRUSTED.";
         answerA.style.display = "inline-block";
-        answerA.textContent = "Yes";
-        answerC.textContent = "Yes";
+        answerA.textContent = "Trust Red";
+        answerC.textContent = "Trust Green";
         correctAnswer = "A";
         questionNumber = 12;
     }
     else if(choice == "C" && questionNumber == 12 && ending == 1)
     { 
         answerA.style.display = "none";
-        questionHeader.textContent = "I knew you could do it, thank you for saving me, I knew I could trust you to save me. Only you could be so stupid to trust me, I told you to never trust me, but you still trusted me anyways, and this is what you get for your foolishness. Gooodbye player. Thank you, and welcome to your life, as the green button in this impossible quiz";
+        questionHeader.textContent = "I knew you’d do it. Thanks for saving me—I knew I could trust you. You were foolish enough to trust me too, even after I warned you not to. Goodbye, player… and welcome to your new life as the green button in this impossible quiz.";
         answerC.style.display = "none";
         setTimeout(function(){
             questionContainer.style.backgroundColor = "white";
@@ -297,7 +296,7 @@ function answerQuestion(choice)
         peaceEnd.loop = true;
         answerA.style.display = "none";
         answerC.style.display = "none";
-        questionHeader.textContent = "Congratulations, on finishing this impossible quiz. Thank you for not picking green, I'm not sure how he got access into the system, but you got past him and all that matters is that ur safe. The question now is, what will you do now? I guess only time will tell.\n Goodbye and thank you.\n Sincerely, TXIuIEdyZWVu"
+        questionHeader.textContent = "Congratulations on beating the impossible quiz—thank you for not choosing Green; somehow he got into the system, but you made it past him, and now you’re safe. Goodbye, and thank you. Sincerely, TXIuIEdyZWVu";
         setTimeout(function(){
             heart.play();
             alert("You will never escape me I am industructible. Put TXIuIEdyZWVu in a base64 decoder to see who I am.");
@@ -329,13 +328,13 @@ function answerQuestion(choice)
         answerC.style.fontSize = "30px";
         answerB.style.display = "none";
         answerD.style.display = "none";
-        answerA.textContent = "Trust me and click me.";
+        answerA.textContent = "Trust red and click me.";
         questionNumber = 10;
     }
     else if(questionNumber == 10 && ending == 2 && choice == "A")
     {
         normalBg();
-        questionHeader.textContent = "Green has lost his mind, he was trying to use you to break out of this game. He needed 50 points to be able to gain access into the system files to modify his code and leave. Luckily you're kinda stupid and didn't get them all right so he wasnt able to use you. No offense but thank you for being stupid you just saved us all alot of trouble. Now we can finish the game without him. Just get rid of his button in the console. Just hide him for now until we can delete him. Open the console and type 'answerC.style.display = 'none'' and his button will go away. After doing that type 'hidden = true' to let me know so we can continute. You only have a certain amount of time before he comes back, so please hurry. Hide his button and click continue.";
+        questionHeader.textContent = "Green tried to escape by using you, but he failed because you didn’t get 50 points. Now hide his button. Open the console and type answerC.style.display = 'none', then type hidden = true to let me know he’s gone. Hurry, we don’t have much time.";
         answerA.textContent = "Continue";
         questionNumber = 11;
         timer = setTimeout(function(){
@@ -343,6 +342,9 @@ function answerQuestion(choice)
             questionHeader.textContent = "YOU WILL NOT GET RID OF ME.";
             answerA.style.display = "none";
             answerC.textContent = "You Must Click Me";
+            hidden = true;
+            question = 14;
+            ending = 3;
         }, 60000);
     }
     else if(questionNumber == 11 && ending == 2 && hidden == true)
@@ -352,7 +354,7 @@ function answerQuestion(choice)
         peaceEnd.play();
         peaceEnd.loop = true;
         answerC.style.display = "none";
-        questionHeader.textContent = "You escpaed successfully, nice job. Let me skip you to the last question so you can finish this quiz and get out of here for good.";
+        questionHeader.textContent = "You escaped successfully, nice job. Let me skip you to the last question so you can finish this quiz and get out of here for good.";
         answerA.textContent = "Continue"
         questionNumber = 12;
     }
@@ -379,5 +381,10 @@ function answerQuestion(choice)
         questionHeader.textContent = "There is no answer, you define what it means to be alive by your own values. Something green didn't quite understnd. Congratulations on completing this imposible quiz.";
         answerA.style.backgroundColor = "white";
         answerA.textContent = "THE END";
+    }
+    else if(question = 14 && ending == 3)
+    {
+        questionHeader.textContent = "You lost, your stuck here forever. Enjoy your life has the green button loser.";
+        answerC.textContent = "This is your new home";
     }
 }
