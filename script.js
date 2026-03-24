@@ -287,7 +287,7 @@ function answerQuestion(choice)
             questionHeader.textContent = "You lost, green won. Welcome to your life as the green button.";
             questionContainer.style.fontFamily = "Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
             document.body.style.backgroundImage ="url(media/black.webp)";
-        }, 20000);
+        }, 8000);
     }
     else if(choice == "A" && questionNumber == 12 && ending == 1)
     {
@@ -345,7 +345,7 @@ function answerQuestion(choice)
             hidden = true;
             question = 14;
             ending = 3;
-        }, 60000);
+        }, 30000);
     }
     else if(questionNumber == 11 && ending == 2 && hidden == true)
     {
